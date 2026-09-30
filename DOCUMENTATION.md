@@ -82,11 +82,10 @@ Reads a diagnostic results JSON (e.g. LIRICAL output) and returns a list of Phen
 
 ### Input
 
-A results JSON file, plus optional HPO terms to filter by.
+A results JSON file.
 
 ```bash
 python bin/plr_scores.py examples/Output1.json
-python bin/plr_scores.py examples/Output1.json HP:0001250 HP:0002353
 ```
 
 The script looks for disease entries with an `observedPhenotypicFeatures` list, where each phenotype has an `explanation` string containing scores in square brackets, for example `[1.221]`. In LIRICAL output these entries are under `analysisResults`.
@@ -109,16 +108,15 @@ Found 3 disease entries
 For each disease entry:
 
 1. Go through each phenotype in `observedPhenotypicFeatures`.
-2. If HPO terms were given, skip phenotypes whose explanation doesn't mention any of them.
-3. Pull out every number in square brackets from the explanation.
-4. Add up the numbers that are 0 or greater. Negative numbers are ignored.
+2. Pull out every number in square brackets from the explanation.
+3. Add up the numbers that are 0 or greater. Negative numbers are ignored.
 
 The total is that disease's PLR score.
 
 ### Functions
 
-**`get_plr_scores(json_path, hpo_terms=None)`**
-Main function. Opens the JSON file and returns the list of PLR scores. `hpo_terms` is an optional list of HPO IDs; when it is `None` or empty, every phenotype is counted. Can be imported and used from other scripts:
+**`get_plr_scores(json_path)`**
+Main function. Opens the JSON file and returns the list of PLR scores. Can be imported and used from other scripts:
 
 ```python
 from plr_scores import get_plr_scores
@@ -130,7 +128,7 @@ scores = get_plr_scores("examples/Output1.json")
 Helper that searches the whole JSON, at any depth, and yields every object that has an `observedPhenotypicFeatures` key. This means the script doesn't depend on the exact layout of the file.
 
 **`main()`**
-Reads the file path and any HPO terms from the command line, calls `get_plr_scores`, and prints the result. Prints a usage message if no file is given.
+Reads the file path from the command line, calls `get_plr_scores`, and prints the result. Prints a usage message if no file is given.
 
 ### Notes
 
