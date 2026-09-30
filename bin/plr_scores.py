@@ -6,7 +6,6 @@ disease entry, from a results JSON file (e.g. LIRICAL output).
 
 Usage:
     python plr_scores.py results.json
-    python plr_scores.py results.json HP:0001250 HP:0002353   # only count matching HPO terms
 """
 
 import json
@@ -28,13 +27,10 @@ def _find_disease_entries(data):
             yield from _find_disease_entries(item)
 
 
-def get_plr_scores(json_path, hpo_terms=None):
+def get_plr_scores(json_path):
     """
     Returns a list of PLR scores (sum of positive bracketed scores in each
     phenotype explanation), one per disease entry in the JSON file.
-
-    If hpo_terms is given, only phenotypes whose explanation mentions one of
-    those terms are counted. If None/empty, all phenotypes are counted.
     """
     with open(json_path, "r", encoding="utf-8") as f:
         data = json.load(f)
@@ -51,8 +47,6 @@ def get_plr_scores(json_path, hpo_terms=None):
         phenotype_lr = 0.0
         for phenotype in features:
             explanation = str(phenotype.get("explanation", ""))
-            if hpo_terms and not any(term in explanation for term in hpo_terms):
-                continue
             for value in SCORE_PATTERN.findall(explanation):
                 sub_lr = float(value)
                 if sub_lr >= 0:
@@ -63,13 +57,12 @@ def get_plr_scores(json_path, hpo_terms=None):
 
 def main():
     if len(sys.argv) < 2:
-        print("Usage: python plr_scores.py <results.json> [HPO_TERM ...]")
+        print("Usage: python plr_scores.py <results.json>")
         sys.exit(1)
 
     json_path = sys.argv[1]
-    hpo_terms = sys.argv[2:] or None
 
-    scores = get_plr_scores(json_path, hpo_terms)
+    scores = get_plr_scores(json_path)
     print(f"Found {len(scores)} disease entries")
     print(scores)
 
