@@ -1,0 +1,126 @@
+{
+  "analysisData" : {
+    "sampleId" : "Output1",
+    "age" : null,
+    "sex" : "UNKNOWN",
+    "observedPhenotypicFeatures" : [ ],
+    "excludedPhenotypicFeatures" : [ ]
+  },
+  "analysisMetadata" : {
+    "liricalVersion" : "2.1.0",
+    "hpoVersion" : "2025-05-06",
+    "transcriptDatabase" : "RefSeq",
+    "analysisDate" : "",
+    "sampleName" : "Output1",
+    "isGlobalAnalysisMode" : false
+  },
+  "analysisResults" : [ {
+    "diseaseId" : "OMIM:___",
+    "pretestProbability" : 1.1892020454275182E-4,
+    "compositeLR" : 2.500000000000001E-23,
+    "posttestProbability" : 2.9733587059942926E-27,
+    "observedPhenotypicFeatures" : [ {
+      "matchType" : "NO_MATCH_BELOW_ROOT",
+      "lr" : 0.01,
+      "explanation" : "___[HP:___][-2.000]",
+      "query" : "HP:___",
+      "match" : "HP:___"
+    }, {
+      "matchType" : "NON_ROOT_COMMON_ANCESTOR",
+      "lr" : 0.01,
+      "explanation" : "___[HP:___]~____[HP:___][-2.000]",
+      "query" : "HP:___",
+      "match" : "HP:___"
+    }, {
+      "matchType" : "NON_ROOT_COMMON_ANCESTOR",
+      "lr" : 0.01,
+      "explanation" : "___[HP:___]~___[HP:___][-2.000]",
+      "query" : "HP:___",
+      "match" : "HP:___"
+    }],
+    "excludedPhenotypicFeatures" : [ ],
+    "genotypeLR" : {
+      "geneId" : {
+        "id" : "NCBIGene:___",
+        "symbol" : "___"
+      },
+      "matchType" : "NO_VARIANTS_DETECTED_AR",
+      "lr" : 0.0025000000000000005,
+      "explanation" : "log<sub>10</sub>(LR)=-2.602. No variants detected with autosomal recessive disease."
+    }
+  }, {
+    "diseaseId" : "OMIM:___",
+    "pretestProbability" : 1.1892020454275182E-4,
+    "compositeLR" : 7.702887160535112E-15,
+    "posttestProbability" : 9.161378640027489E-19,
+    "observedPhenotypicFeatures" : [ {
+      "matchType" : "NON_ROOT_COMMON_ANCESTOR",
+      "lr" : 0.029699080237337496,
+      "explanation" : "___[HP:___]~___[HP:___][-1.527]",
+      "query" : "HP:___",
+      "match" : "HP:___"
+    }, {
+      "matchType" : "EXACT_MATCH",
+      "lr" : 5.0979663160309014,
+      "explanation" : "___[HP:___][0.707]",
+      "query" : "HP:___",
+      "match" : "HP:___"
+    }, {
+      "matchType" : "QUERY_TERM_SUBCLASS_OF_DISEASE_TERM",
+      "lr" : 9.807798776463178,
+      "explanation" : "___[HP:___]<___[HP:___][0.992]",
+      "query" : "HP:___",
+      "match" : "HP:___"
+    }],
+    "excludedPhenotypicFeatures" : [ ],
+    "genotypeLR" : {
+      "geneId" : {
+        "id" : "NCBIGene:___",
+        "symbol" : "___"
+      },
+      "matchType" : "NO_VARIANTS_DETECTED_AR",
+      "lr" : 0.0025000000000000005,
+      "explanation" : "log<sub>10</sub>(LR)=-2.602. No variants detected with autosomal recessive disease."
+    }
+  }, {
+    "diseaseId" : "OMIM:___",
+    "pretestProbability" : 1.1892020454275182E-4,
+    "compositeLR" : 1.2346325024846604E-19,
+    "posttestProbability" : 1.4684021199865135E-23,
+    "observedPhenotypicFeatures" : [ {
+      "matchType" : "NON_ROOT_COMMON_ANCESTOR",
+      "lr" : 0.029699080237337496,
+      "explanation" : "___[HP:___]~___[HP:___][-1.527]",
+      "query" : "HP:___",
+      "match" : "HP:___"
+    }, {
+      "matchType" : "NO_MATCH_BELOW_ROOT",
+      "lr" : 0.01,
+      "explanation" : "___[HP:___][-2.000]",
+      "query" : "HP:___",
+      "match" : "HP:___"
+    }, {
+      "matchType" : "NO_MATCH_BELOW_ROOT",
+      "lr" : 0.01,
+      "explanation" : "___[HP:___][-2.000]",
+      "query" : "HP:___",
+      "match" : "HP:___"
+    }, {
+      "matchType" : "EXACT_MATCH",
+      "lr" : 16.62856213213617,
+      "explanation" : "___[HP:___][1.221]",
+      "query" : "HP:___",
+      "match" : "HP:___"
+    }],
+    "excludedPhenotypicFeatures" : [ ],
+    "genotypeLR" : {
+      "geneId" : {
+        "id" : "NCBIGene:___",
+        "symbol" : "___"
+      },
+      "matchType" : "NO_VARIANTS_DETECTED_AR",
+      "lr" : 0.0025000000000000005,
+      "explanation" : "log<sub>10</sub>(LR)=-2.602. No variants detected with autosomal recessive disease."
+    }
+  }]
+}
