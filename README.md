@@ -91,12 +91,6 @@ Reads a results JSON (e.g. LIRICAL output) and returns a list of PLR scores, one
 python bin/plr_scores.py examples/output1.json
 ```
 
-To only count phenotypes that match specific HPO terms, list them after the file:
-
-```bash
-python bin/plr_scores.py examples/output1.json HP:0001250 HP:0002353
-```
-
 **Use from other code:**
 
 ```python
@@ -104,15 +98,6 @@ from plr_scores import get_plr_scores
 
 scores = get_plr_scores("examples/output1.json")
 ```
-
----
-
-## Adding a new function
-
-1. Add the script to `bin/`.
-2. Add an example input to `examples/` if it needs one.
-3. Add a row to the table in the Overview and a section under Functions.
-
 ---
 
 See `DOCUMENTATION.md` for a more detailed explanation of each script and its functions.
