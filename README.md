@@ -7,7 +7,7 @@ This repo is a collection of standalone Python scripts for working with patient 
 | Script | What it does | Example input |
 | --- | --- | --- |
 | `nodeFinder.py` | Finds patient JSON files that contain highly similar HPO terms | `examples/patient1.json`, `examples/patient2.json` |
-| `plr_scores.py` | Returns a list of Phenotype LR (PLR) scores, one per disease entry, from a results JSON | `examples/output1.json` |
+| `plr_scores.py` | Returns a list of Phenotype LR (PLR) scores, one per disease entry, from a results JSON | `examples/Output1.json` |
 
 ---
 
@@ -21,7 +21,7 @@ project-name/
 ├── examples/
 │   ├── patient1.json
 │   ├── patient2.json
-│   └── output1.json
+│   └── Output1.json
 ├── DOCUMENTATION.md
 └── README.md
 ```
@@ -88,7 +88,7 @@ Reads a results JSON (e.g. LIRICAL output) and returns a list of PLR scores, one
 **Run:**
 
 ```bash
-python bin/plr_scores.py examples/output1.json
+python bin/plr_scores.py examples/Output1.json
 ```
 
 **Use from other code:**
@@ -96,7 +96,7 @@ python bin/plr_scores.py examples/output1.json
 ```python
 from plr_scores import get_plr_scores
 
-scores = get_plr_scores("examples/output1.json")
+scores = get_plr_scores("examples/Output1.json")
 ```
 ---
 
